@@ -12,15 +12,6 @@ export default NextAuth({
       clientSecret: process.env.GOOGLE_SECRET,
     }),
   ],
-
-  callbacks: {
-    jwt: async ({ token, user }) => {
-      if (user) {
-        token.sub = user.sub;
-      }
-      return token;
-    }
-  },
   
   adapter: FirebaseAdapter({
     db: db,
