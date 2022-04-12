@@ -18,17 +18,6 @@ export default NextAuth({
       return session;
     },
   },
-  // callbacks: {
-  //   async session({session, token, user}) {
-  //     session.user.username = session.user.name
-  //       .split(" ")
-  //       .join("")
-  //       .toLocaleLowerCase();
-
-  //     session.user.uid = token.sub;
-  //     return session;
-  //   },
-  // },
   secret: process.env.NEXT_PUBLIC_SECRET,
   adapter: FirebaseAdapter({
     db: db,
