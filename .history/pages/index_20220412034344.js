@@ -1,11 +1,9 @@
-import {getSession, useSession} from "next-auth/react";
 import Head from "next/head";
 import Header from "../components/Header";
 import Slider from "../components/Slider";
 import Brands from "../components/Brands";
 import MoviesCollection from "../components/MoviesCollection";
 import ShowsCollection from "../components/ShowsCollection";
-import Hero from "../components/Hero";
 
 
 export default function index({
@@ -14,7 +12,6 @@ export default function index({
   top_ratedMovies,
   top_ratedShows,
 }) {
-  const { data: session } = useSession()
 
   return (
     <div>
@@ -27,29 +24,24 @@ export default function index({
       </Head>
 
       <Header />
-      
-      {!session ? (
-        <Hero />
-      ) : (
-        <main className="relative min-h-screen after:bg-home after:bg-center after:bg-cover after:bg-no-repeat after:bg-fixed after:absolute after:inset-0 after:z-[-1]">
-          <Slider />
-          <Brands />
-          <MoviesCollection results={popularMovies} title="Popular Movies" />
-          <ShowsCollection results={popularShows} title="Popular Shows" />
-          <MoviesCollection
-            results={top_ratedMovies}
-            title="Top Rated Movies"
-          />
-          <ShowsCollection results={top_ratedShows} title="Top Rated Shows" />
+      <main className="relative min-h-screen after:bg-home after:bg-center after:bg-cover after:bg-no-repeat after:bg-fixed after:absolute after:inset-0 after:z-[-1]">
+        <Slider />
+        <Brands />
+        <MoviesCollection results={popularMovies} title="Popular Movies" />
+        <ShowsCollection results={popularShows} title="Popular Shows" />
+
+        <MoviesCollection
+          results={top_ratedMovies}
+          title="Top Rated Movies"
+        />
+        <ShowsCollection results={top_ratedShows} title="Top Rated Shows" />
       </main>
-      )}
     </div>
   );
 }
 
 
-export async function getServerSideProps(context) {
-  const session = await getSession(context)
+export async function getServerSideProps() {
   const [
     popularMoviesRes,
     popularShowsRes,

@@ -48,8 +48,8 @@ export default function index({
 }
 
 
-export async function getServerSideProps(context) {
-  const session = await getSession(context)
+export async function getServerSideProps() {
+  const session = await getSession(context);
   const [
     popularMoviesRes,
     popularShowsRes,
