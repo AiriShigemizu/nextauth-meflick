@@ -12,7 +12,7 @@ export default NextAuth({
       clientSecret: process.env.GOOGLE_SECRET,
     }),
   ],
-  
+  secret: process.env.NEXT_PUBLIC_NEXTAUTH_SECRET,
   adapter: FirebaseAdapter({
     db: db,
     ...firestoreFunctions,

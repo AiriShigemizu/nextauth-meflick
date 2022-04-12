@@ -3,6 +3,12 @@ import { getFirestore } from 'firebase/firestore'
 import { getStorage } from 'firebase/storage'
 
 const firebaseConfig = {
+  // apiKey: "AIzaSyAMvQfLrahfxr1I3xYlMIF-TSaNV5eV9_Y",
+  // authDomain: "meflick410.firebaseapp.com",
+  // projectId: "meflick410",
+  // storageBucket: "meflick410.appspot.com",
+  // messagingSenderId: "650989087398",
+  // appId: "1:650989087398:web:73ac5017b41fb747e52267"
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTHA_DOMAIN,
   databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL,
