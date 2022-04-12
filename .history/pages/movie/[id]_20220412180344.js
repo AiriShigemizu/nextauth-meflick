@@ -53,9 +53,9 @@ function Movie({ result }) {
             </h1>
             <div className="flex items-center space-x-3 md:space-x-5">
               <button className="text-xs md:text-base bg-[#f9f9f9] text-black flex items-center justify-center py-2.5 px-6 rounded hover:bg-[#c6c6c6]">
-                <Image
+                <img
                   src="/images/play-icon-black.svg"
-                  alt="play icon"
+                  alt=""
                   className="h-6 md:h-8"
                 />
                 <span className="uppercase font-medium tracking-wide">
@@ -67,9 +67,9 @@ function Movie({ result }) {
                 className="text-xs md:text-base bg-black/30 text-[#f9f9f9] border border-[#f9f9f9] flex items-center justify-center py-2.5 px-6 rounded hover:bg-[#c6c6c6]"
                 onClick={() => setShowPlayer(true)}
               >
-                <Image
+                <img
                   src="/images/play-icon-white.svg"
-                  alt="play icon of Trailer"
+                  alt=""
                   className="h-6 md:h-8"
                 />
                 <span className="uppercase font-medium tracking-wide">
@@ -82,7 +82,7 @@ function Movie({ result }) {
               </div>
 
               <div className="rounded-full border-2 border-white flex items-center justify-center w-11 h-11 cursor-pointer bg-black/60">
-                <Image src="/images/group-icon.svg" alt="group icon" />
+                <img src="/images/group-icon.svg" alt="" />
               </div>
             </div>
 

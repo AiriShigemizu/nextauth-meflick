@@ -14,16 +14,16 @@ function Slider() {
         interval={5000}
       >
         <div>
-          <img loading="lazy" src="/images/slider-1.jpg" alt="slider 1" />
+          <img loading="lazy" src="/images/slider-1.jpg" alt="" />
         </div>
         <div>
-          <img loading="lazy" src="/images/slider-2.jpg" alt="slider 2" />
+          <img loading="lazy" src="/images/slider-2.jpg" alt="" />
         </div>
         <div>
-          <img loading="lazy" src="/images/slider-3.jpg" alt="slider 3" />
+          <img loading="lazy" src="/images/slider-3.jpg" alt="" />
         </div>
         <div>
-          <img loading="lazy" src="/images/slider-4.jpeg" alt="slider 4" />
+          <img loading="lazy" src="/images/slider-4.jpeg" alt="" />
         </div>
       </Carousel>
     </section>
