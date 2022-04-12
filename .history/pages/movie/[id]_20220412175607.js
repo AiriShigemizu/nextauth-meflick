@@ -1,4 +1,5 @@
-import {getSession, useSession} from "next-auth/react";
+import React from 'react'
+import { getSession, useSession } from 'next-auth/react'
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -8,11 +9,10 @@ import Hero from "../../components/Hero";
 import { PlusIcon, XIcon } from "@heroicons/react/solid";
 import ReactPlayer from "react-player/lazy";
 
-function Show({result}) {
+function Movie({ result }) {
   const { data: session } = useSession()
-  const router = useRouter()
-  
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
+  const router = useRouter();
   const [showPlayer, setShowPlayer] = useState(false);
 
   useEffect(() => {
@@ -44,10 +44,9 @@ function Show({result}) {
               }
               layout="fill"
               objectFit="cover"
-              alt="movie image"
             />
           </div>
-          <div className="absolute inset-y-12 md:inset-y-auto md:bottom-10 inset-x-4 md:inset-x-12 space-y-6 z-50">
+          <div className="absolute inset-y-28 md:inset-y-auto md:bottom-10 inset-x-4 md:inset-x-12 space-y-6 z-50">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
               {result.title || result.original_name}
             </h1>
@@ -88,8 +87,7 @@ function Show({result}) {
 
             <p className="text-xs md:text-sm">
               {result.release_date || result.first_air_date} •{" "}
-              {result.number_of_seasons}{" "}
-              {result.number_of_seasons === 1 ? "Season" : "Seasons"} •{" "}
+              {Math.floor(result.runtime / 60)}h {result.runtime % 60}m •{" "}
               {result.genres.map((genre) => genre.name + " ")}{" "}
             </p>
             <h4 className="text-sm md:text-lg max-w-4xl">{result.overview}</h4>
@@ -131,14 +129,14 @@ function Show({result}) {
   );
 }
 
-export default Show;
+export default Movie;
 
 export async function getServerSideProps(context) {
-  const session = await getSession(context)
-  const {id} = context.query;
+  const session = await getSession(context);
+  const { id } = context.query;
 
   const request = await fetch(
-    `https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.API_KEY}&language=en-US&append_to_response=videos`
+    `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.API_KEY}&language=en-US&append_to_response=videos`
   ).then((response) => response.json());
 
   return {

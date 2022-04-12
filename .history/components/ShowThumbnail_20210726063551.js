@@ -19,7 +19,6 @@ function ShowThumbnail({ result }) {
         height={210}
         objectFit="cover"
         className="rounded-lg"
-        alt="movie image"
       />
     </div>
   );

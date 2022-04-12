@@ -25,7 +25,6 @@ function Hero() {
             width="600"
             height="150"
             objectFit="contain"
-            alt="cta logo"
           />
           <button
             className="bg-blue-600 uppercase text-xl tracking-wide font-extrabold py-4 px-6 w-full rounded hover:bg-[#0485ee]"
@@ -43,7 +42,6 @@ function Hero() {
             width="600"
             height="70"
             objectFit="contain"
-            alt="cta logo"
           />
         </div>
       </div>

@@ -4,7 +4,7 @@ function Brands() {
   return (
     <section className="flex flex-col md:flex-row justify-center items-center mt-10 gap-6 px-8 max-w-[1400px] mx-auto">
       <div className="brand group">
-        <Image src="/images/disnep.png" layout="fill" objectFit="cover" alt="disney logo" />
+        <Image src="/images/disnep.png" layout="fill" objectFit="cover" />
         <video
           autoPlay
           loop
@@ -16,7 +16,7 @@ function Brands() {
       </div>
 
       <div className="brand group">
-        <Image src="/images/pixar.png" layout="fill" objectFit="cover"  alt="pixar logo"/>
+        <Image src="/images/pixar.png" layout="fill" objectFit="cover" />
         <video
           autoPlay
           loop
@@ -28,7 +28,7 @@ function Brands() {
       </div>
 
       <div className="brand group">
-        <Image src="/images/marvel.png" layout="fill" objectFit="cover"  alt="marvel logo"/>
+        <Image src="/images/marvel.png" layout="fill" objectFit="cover" />
         <video
           autoPlay
           loop
@@ -40,7 +40,7 @@ function Brands() {
       </div>
 
       <div className="brand group">
-        <Image src="/images/starwars.png" layout="fill" objectFit="cover" alt="starwars logo"/>
+        <Image src="/images/starwars.png" layout="fill" objectFit="cover" />
         <video
           autoPlay
           loop
@@ -56,7 +56,6 @@ function Brands() {
           src="/images/national-geographic.png"
           layout="fill"
           objectFit="cover"
-          alt="national geographic logo"
         />
         <video
           autoPlay

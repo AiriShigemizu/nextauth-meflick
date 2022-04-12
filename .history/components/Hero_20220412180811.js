@@ -43,7 +43,6 @@ function Hero() {
             width="600"
             height="70"
             objectFit="contain"
-            alt="cta logo"
           />
         </div>
       </div>

@@ -44,7 +44,6 @@ function Show({result}) {
               }
               layout="fill"
               objectFit="cover"
-              alt="movie image"
             />
           </div>
           <div className="absolute inset-y-12 md:inset-y-auto md:bottom-10 inset-x-4 md:inset-x-12 space-y-6 z-50">

@@ -16,7 +16,7 @@ function Brands() {
       </div>
 
       <div className="brand group">
-        <Image src="/images/pixar.png" layout="fill" objectFit="cover"  alt="pixar logo"/>
+        <Image src="/images/pixar.png" layout="fill" objectFit="cover" />
         <video
           autoPlay
           loop
@@ -28,7 +28,7 @@ function Brands() {
       </div>
 
       <div className="brand group">
-        <Image src="/images/marvel.png" layout="fill" objectFit="cover"  alt="marvel logo"/>
+        <Image src="/images/marvel.png" layout="fill" objectFit="cover" />
         <video
           autoPlay
           loop
@@ -40,7 +40,7 @@ function Brands() {
       </div>
 
       <div className="brand group">
-        <Image src="/images/starwars.png" layout="fill" objectFit="cover" alt="starwars logo"/>
+        <Image src="/images/starwars.png" layout="fill" objectFit="cover" />
         <video
           autoPlay
           loop
@@ -56,7 +56,6 @@ function Brands() {
           src="/images/national-geographic.png"
           layout="fill"
           objectFit="cover"
-          alt="national geographic logo"
         />
         <video
           autoPlay

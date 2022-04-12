@@ -56,7 +56,6 @@ function Brands() {
           src="/images/national-geographic.png"
           layout="fill"
           objectFit="cover"
-          alt="national geographic logo"
         />
         <video
           autoPlay
