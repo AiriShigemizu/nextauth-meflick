@@ -12,12 +12,12 @@ export default NextAuth({
       clientSecret: process.env.GOOGLE_SECRET,
     }),
   ],
-  // callbacks: {
-  //   async session(session, token) {
-  //     session.accessToken = token;
-  //     return session;
-  //   },
-  // },
+  callbacks: {
+    async session(session, token) {
+      session.accessToken = token;
+      return session;
+    },
+  },
   secret: process.env.NEXT_PUBLIC_NEXTAUTH_SECRET,
   adapter: FirebaseAdapter({
     db: db,

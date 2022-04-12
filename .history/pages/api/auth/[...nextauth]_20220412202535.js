@@ -12,9 +12,20 @@ export default NextAuth({
       clientSecret: process.env.GOOGLE_SECRET,
     }),
   ],
+  callbacks: {
+    async session(session, token) {
+      session.accessToken = token;
+      return session;
+    },
+  },
   // callbacks: {
-  //   async session(session, token) {
-  //     session.accessToken = token;
+  //   async session({session, token, user}) {
+  //     session.user.username = session.user.name
+  //       .split(" ")
+  //       .join("")
+  //       .toLocaleLowerCase();
+
+  //     session.user.uid = token.sub;
   //     return session;
   //   },
   // },
