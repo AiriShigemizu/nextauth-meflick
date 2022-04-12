@@ -1,5 +1,4 @@
-import React from 'react'
-import { getSession, useSession } from 'next-auth/react'
+import {getSession, useSession} from "next-auth/react";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -9,17 +8,18 @@ import Hero from "../../components/Hero";
 import { PlusIcon, XIcon } from "@heroicons/react/solid";
 import ReactPlayer from "react-player/lazy";
 
-function Movie({ result }) {
+function Movie({result}) {
   const { data: session } = useSession()
+  const router = useRouter()
+  
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
-  const router = useRouter();
   const [showPlayer, setShowPlayer] = useState(false);
 
   useEffect(() => {
     if (!session) {
       router.push("/");
     }
-  }, [session, router]);
+  }, [session]);
 
   const index = result.videos.results.findIndex(
     (element) => element.type === "Trailer"
@@ -132,9 +132,9 @@ function Movie({ result }) {
 export default Movie;
 
 export async function getServerSideProps(context) {
-  const session = await getSession(context);
-  const { id } = context.query;
-
+  const session = await getSession(context)
+  const {id} = context.query;
+  
   const request = await fetch(
     `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.API_KEY}&language=en-US&append_to_response=videos`
   ).then((response) => response.json());
@@ -144,5 +144,5 @@ export async function getServerSideProps(context) {
       session,
       result: request,
     },
-  };
+  }
 }

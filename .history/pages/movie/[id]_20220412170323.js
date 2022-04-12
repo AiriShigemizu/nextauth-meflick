@@ -1,5 +1,4 @@
-import React from 'react'
-import { getSession, useSession } from 'next-auth/react'
+import { getSession, useSession } from "next-auth/react";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -10,7 +9,7 @@ import { PlusIcon, XIcon } from "@heroicons/react/solid";
 import ReactPlayer from "react-player/lazy";
 
 function Movie({ result }) {
-  const { data: session } = useSession()
+  const [session] = useSession();
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
   const router = useRouter();
   const [showPlayer, setShowPlayer] = useState(false);
@@ -19,7 +18,7 @@ function Movie({ result }) {
     if (!session) {
       router.push("/");
     }
-  }, [session, router]);
+  }, []);
 
   const index = result.videos.results.findIndex(
     (element) => element.type === "Trailer"

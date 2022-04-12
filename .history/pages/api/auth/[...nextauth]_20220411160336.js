@@ -13,10 +13,6 @@ export default NextAuth({
     }),
   ],
   callbacks: {
-    async session(session, token) {
-      session.accessToken = token;
-      return session;
-    },
   },
   secret: process.env.JWT_SECRET,
   adapter: FirebaseAdapter({

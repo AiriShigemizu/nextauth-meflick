@@ -1,5 +1,4 @@
-import React from 'react'
-import { getSession, useSession } from 'next-auth/react'
+import { getSession, useSession } from "next-auth/react";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -19,7 +18,7 @@ function Movie({ result }) {
     if (!session) {
       router.push("/");
     }
-  }, [session, router]);
+  }, []);
 
   const index = result.videos.results.findIndex(
     (element) => element.type === "Trailer"
