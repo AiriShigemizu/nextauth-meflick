@@ -19,7 +19,7 @@ function Movie({result}) {
     if (!session) {
       router.push("/");
     }
-  }, [router]);
+  }, []);
 
   const index = result.videos.results.findIndex(
     (element) => element.type === "Trailer"

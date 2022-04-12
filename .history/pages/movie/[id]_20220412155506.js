@@ -15,11 +15,19 @@ function Movie({result}) {
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
   const [showPlayer, setShowPlayer] = useState(false);
 
-  useEffect(() => {
-    if (!session) {
-      router.push("/");
+  // useEffect(() => {
+  //   if (!session) {
+  //     router.push("/");
+  //   }
+  // }, []);
+
+  const useEffect = useMemo(() => {
+    return () => {
+      if (!session) {
+        router.push("/");
+      }
     }
-  }, [router]);
+  }, []);
 
   const index = result.videos.results.findIndex(
     (element) => element.type === "Trailer"
