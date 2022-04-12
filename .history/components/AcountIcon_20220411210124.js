@@ -9,7 +9,7 @@ const AcountIcon = () => {
   return (
     <div
       className="flex h-auto w-64 cursor-pointer items-center justify-center rounded-md border border-gray-300 px-4 py-2"
-      onClick={() => router.push('/signin')}
+      onClick={() => router.push('auth/signin')}
     >
       {!session ? (
         <div className="flex items-center justify-center">
